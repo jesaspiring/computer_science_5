@@ -1,3 +1,42 @@
+"""
+SHIPPING CALCULATOR 
+
+Rules:
+1. Base Cost by Weight:
+o For orders weighing 0 to 5 kg (inclusive): P50.00
+o For orders weighing 5.01 to 10 kg (inclusive): P100.00
+o For orders weighing over 10 kg: P150.00
+2. Destination Surcharge:
+o If the destination is 'International': Add an additional P7.50 to the base cost.
+o If the destination is 'Domestic': No additional surcharge.
+3. Priority Shipment Fee:
+o If the shipment is marked as 'Priority': Add an additional 20% of the total cost
+(base cost + destination surcharge).
+
+Input:
+The program will prompt the user for the following inputs:
+o weight (float): The weight of the order in kilograms. The user should enter a numeric
+value.
+o destination (string): Either 'Domestic' or 'International'. The input will be case-insensitive.
+o is_priority (string): 'Yes'; or 'No'; to indicate if it's a priority shipment. The input will be
+case-insensitive.
+The program should continue to ask for new inputs until the user types 'exit'; when prompted to
+continue.
+
+Output:
+o For each set of inputs, the program will display the total_shipping_cost (float), rounded
+to two decimal places.
+o It should also provide clear prompts and handle invalid inputs gracefully (e.g., non-
+numeric weight, invalid destination, invalid priority choice).
+
+
+NOTE: 
+THIS PROGRAM DOES NOT USES FUNCTION AS OF THE MOMENT SINCE FUNCTIONS ARE NOT DISCUSSED YET.
+THIS IS A BASIC IMPLEMENTATION OF THE ABOVE PROBLEM.
+"""
+
+
+
 #Charges
 PRIORITY_SURCHARGE = 0.2
 DESTINATION_SURCHARGE = 7.50

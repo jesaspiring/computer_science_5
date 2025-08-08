@@ -5,10 +5,6 @@ cargo_weight_cost = 0
 subtotal = 0
 total_cost = 0
 
-new_transaction = ""
-priority_shipping = ""
-destination = ""
-cargo_weight = ""
 valid_input = False
 
 

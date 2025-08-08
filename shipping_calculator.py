@@ -4,6 +4,7 @@ DESTINATION_SURCHARGE = 7.50
 cargo_weight_cost = 0
 subtotal = 0
 total_cost = 0
+subtotal_added_fee = 0
 
 valid_input = False
 
@@ -72,7 +73,8 @@ while True:
                     
         #Priority Shipping
         if priority_shipping == "yes":
-            total_cost = (subtotal * PRIORITY_SURCHARGE) + subtotal
+            subtotal_added_fee = subtotal * PRIORITY_SURCHARGE
+            total_cost = subtotal_added_fee + subtotal
         else:
             total_cost = subtotal
         
@@ -87,11 +89,11 @@ while True:
         print("Priority Shipping: {}".format(priority_shipping))
         
         print("-"*30)
-        print("{:^30s}".format("SUMMARY"))
+        print("{:^30s}".format("COMPUTATION"))
         print("-"*30)
         print("Base Cost: {:.2f}".format(cargo_weight_cost))
         print("Destination Surcharge: {:.2f}".format(DESTINATION_SURCHARGE if destination == "international" else 0))
-        print("Priority Surcharge: {:.2f}".format(PRIORITY_SURCHARGE*subtotal if priority_shipping == "yes" else 0))
+        print("Priority Surcharge: {:.2f}".format(subtotal_added_fee))
         print("Total Shipping Cost: {:.2f}".format(total_cost))
         print("="*30)
         print("")
@@ -110,6 +112,6 @@ while True:
     
             
             
-print("Thank you for using the Shipping Calculator!")    
+print("\nThank you for using the Shipping Calculator!")    
         
     

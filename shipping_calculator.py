@@ -33,6 +33,7 @@ numeric weight, invalid destination, invalid priority choice).
 NOTE: 
 THIS PROGRAM DOES NOT USES FUNCTION AS OF THE MOMENT SINCE FUNCTIONS ARE NOT DISCUSSED YET.
 THIS IS A BASIC IMPLEMENTATION OF THE ABOVE PROBLEM.
+
 """
 
 
@@ -54,7 +55,7 @@ while True:
     
     cargo_weight = input("Enter weight of the cargo: ")
     
-    #Cargo Weight
+    # Cargo Weight
     if cargo_weight.lower() == "exit":
         break
     elif cargo_weight.isnumeric() or "." in cargo_weight.lower():
@@ -66,8 +67,9 @@ while True:
 
     if valid_input:
         
-        #Destination
-        destination = input("Choose destination:\
+        # Destination
+        destination = input(
+                       "Choose destination:\
                         \n•Domestic"\
                        "\n•International\n= ").lower()
         
@@ -79,9 +81,10 @@ while True:
             print("Invalid input")
             valid_input = False
         
-        #Priority Shipping
+        # Priority Shipping
         if valid_input:
-            priority_shipping = input("Mark as Priority?:\
+            priority_shipping = input(
+                       "Mark as Priority?:\
                         \n•Yes"\
                        "\n•No\n= ").lower()
         
@@ -95,7 +98,7 @@ while True:
             
    
     if valid_input: 
-        #Cargo weight calculation
+        # Cargo weight calculation
         if cargo_weight > 10.00:
             cargo_weight_cost = 150.00
         elif cargo_weight <= 10 and cargo_weight >= 5.01:
@@ -104,13 +107,13 @@ while True:
             cargo_weight_cost = 50.00
 
             
-        #Destination calculation    
+        # Destination calculation    
         if destination == "international":
             subtotal = cargo_weight_cost + DESTINATION_SURCHARGE
         else:
             subtotal = cargo_weight_cost
                     
-        #Priority Shipping
+        # Priority Shipping
         if priority_shipping == "yes":
             subtotal_added_fee = subtotal * PRIORITY_SURCHARGE
             total_cost = subtotal_added_fee + subtotal
@@ -131,7 +134,8 @@ while True:
         print("{:^30s}".format("COMPUTATION"))
         print("-"*30)
         print("Base Cost: {:.2f}".format(cargo_weight_cost))
-        print("Destination Surcharge: {:.2f}".format(DESTINATION_SURCHARGE if destination == "international" else 0))
+        print("Destination Surcharge: {:.2f}".format(
+               DESTINATION_SURCHARGE if destination == "international" else 0))
         print("Priority Surcharge: {:.2f}".format(subtotal_added_fee))
         print("Total Shipping Cost: {:.2f}".format(total_cost))
         print("="*30)

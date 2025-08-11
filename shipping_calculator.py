@@ -38,7 +38,7 @@ THIS IS A BASIC IMPLEMENTATION OF THE ABOVE PROBLEM.
 
 
 
-#Charges
+# Charges
 PRIORITY_SURCHARGE = 0.2
 DESTINATION_SURCHARGE = 7.50
 cargo_weight_cost = 0
@@ -121,7 +121,7 @@ while True:
             total_cost = subtotal
         
         
-        #Print Summary
+        # Print Summary
         print("")
         print("="*30)
         print("{:^30s}".format("DETAILS"))
@@ -141,6 +141,7 @@ while True:
         print("="*30)
         print("")
         
+        # Prompt user for transaction
         new_transaction = input("Do you want to make another transaction? [Yes/No]: ").lower()
         
         if new_transaction == "no":
